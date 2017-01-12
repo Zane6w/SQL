@@ -12,7 +12,7 @@ class SQLManager: NSObject {
     static let shared = SQLManager()
     
     var db: OpaquePointer?
-        
+    
     /// 创建并打开数据库
     func openDB() -> Bool {
         var filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
@@ -81,14 +81,27 @@ class SQLManager: NSObject {
     /// 插入数据
     func insert(results: [[String: Any]]) {
         let data = NSKeyedArchiver.archivedData(withRootObject: results)
-        // 插入 SQL
-        let insertSQL = "INSERT INTO t_models (results) VALUES ('\(data)');"
-
-        if self.execSQL(sql: insertSQL) {
-            print("数据插入成功")
-        } else {
-            print("数据插入失败")
+        let array = data.withUnsafeBytes {
+            [UInt8] (UnsafeBufferPointer(start: $0, count: data.count))
         }
+        
+        // 插入 SQL
+        let insertSQL = "INSERT INTO t_models (results) VALUES (?);"
+
+        var stmt: OpaquePointer?
+        if sqlite3_prepare_v2(db, insertSQL, -1, &stmt, nil) == SQLITE_OK {
+            sqlite3_bind_blob(stmt, 1, array, Int32(data.count), nil)
+            sqlite3_step(stmt)
+            sqlite3_finalize(stmt)
+        } else {
+            print("Failed from sqlite3_prepare_v2. Error is:  %s", sqlite3_errmsg(db))
+        }
+        
+//        if self.execSQL(sql: insertSQL) {
+//            print("数据插入成功")
+//        } else {
+//            print("数据插入失败")
+//        }
     }
     
     /// 读取数据
