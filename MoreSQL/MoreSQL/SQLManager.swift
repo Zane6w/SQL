@@ -12,9 +12,7 @@ class SQLManager: NSObject {
     static let shared = SQLManager()
     
     var db: OpaquePointer?
-    
-    var dataLength: Int?
-    
+        
     /// 创建并打开数据库
     func openDB() -> Bool {
         var filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
@@ -86,7 +84,7 @@ class SQLManager: NSObject {
         // 插入 SQL
         let insertSQL = "INSERT INTO t_models (results) VALUES ('\(data)');"
 
-        if SQLManager.shared.execSQL(sql: insertSQL) {
+        if self.execSQL(sql: insertSQL) {
             print("数据插入成功")
         } else {
             print("数据插入失败")
@@ -97,7 +95,7 @@ class SQLManager: NSObject {
     func loadData() -> [Any]? {
         let querySQL = "SELECT results FROM t_models;"
         
-        let dictArr = SQLManager.shared.querySQL(querySQL: querySQL)
+        let dictArr = self.querySQL(querySQL: querySQL)
         
         // 判断数组如果有值, 则遍历, 并且转成模型对象, 放入另外一个数组中
         if let temoDictArr = dictArr {
