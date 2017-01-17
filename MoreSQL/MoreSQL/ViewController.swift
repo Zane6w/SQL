@@ -47,7 +47,10 @@ extension ViewController {
             for js in array {
                 let json = js as! String
                 let objc = jsonConvertToAny(json: json)
-                print(objc as Any)
+                
+                if let objc = objc {
+                    printDBug(objc)
+                }
             }
         }
     }

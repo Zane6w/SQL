@@ -13,20 +13,34 @@ class SQLite: NSObject {
     // MARK:- 属性
     static let shared = SQLite()
     
-    var dbPath: String? {
-        var dbPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        dbPath += "/data.sqlite"
-        
-        return dbPath
-    }
+    /// 表名称
+    var tableName: String?
     
+    /// 路径
+    var dbPath: String?
+    
+    /// 数据库
     var db: FMDatabase?
     
     // MARK:- 方法
     /// 开启数据库
-    func openDB() -> Bool {
-        db = FMDatabase(path: dbPath!)
+    func openDB(pathName: String? = nil, tableName: String) -> Bool {
+        if let pathName = pathName {
+            return open(pathName, tableName)
+        } else {
+            return open("data", tableName)
+        }
+    }
+    
+    // 封装开启方法
+    fileprivate func open(_ pathName: String, _ tableName: String) -> Bool {
+        var path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        path = path + "/" + pathName + ".sqlite"
+        dbPath = path
+        
+        db = FMDatabase(path: path)
         if (db?.open())! {
+            self.tableName = tableName
             // 数据库开启成功
             _ = createTable()
             return true
@@ -38,7 +52,7 @@ class SQLite: NSObject {
     
     /// 创建表
     func createTable() -> Bool {
-        let sql = "CREATE TABLE IF NOT EXISTS t_models (id INTEGER PRIMARY KEY AUTOINCREMENT,js BLOB);"
+        let sql = "CREATE TABLE IF NOT EXISTS \(tableName!) (id INTEGER PRIMARY KEY AUTOINCREMENT,js BLOB);"
         
         if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
             printDBug("创建表成功")
@@ -51,7 +65,7 @@ class SQLite: NSObject {
     
     /// 插入
     func insert(js: String) -> Bool {
-        let sql = "INSERT INTO t_models (js) VALUES (?);"
+        let sql = "INSERT INTO \(tableName!) (js) VALUES (?);"
         
         if (db?.executeUpdate(sql, withArgumentsIn: [js]))! {
             printDBug("插入数据成功")
@@ -64,7 +78,7 @@ class SQLite: NSObject {
     
     /// 查询
     func query() -> [Any]? {
-        let sql = "SELECT * FROM t_models;"
+        let sql = "SELECT * FROM \(tableName!);"
         let resultsSet = db?.executeQuery(sql, withArgumentsIn: nil)
         
         guard resultsSet != nil else {
@@ -85,7 +99,7 @@ class SQLite: NSObject {
     /// 删除
     func delete() -> Bool {
         // 删除所有 或 where ..... 来进行判断筛选删除
-        let sql = "DELETE FROM t_models;"
+        let sql = "DELETE FROM \(tableName!);"
         
         if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
             printDBug("删除成功")
@@ -98,7 +112,7 @@ class SQLite: NSObject {
     
     /// 修改
     func update(newValue: Any) -> Bool {
-        let sql = "UPDATE t_models SET js = '\(newValue)';"
+        let sql = "UPDATE \(tableName!) SET js = '\(newValue)';"
         
         if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
             printDBug("修改成功")
