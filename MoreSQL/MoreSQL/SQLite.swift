@@ -28,7 +28,7 @@ class SQLite: NSObject {
         db = FMDatabase(path: dbPath!)
         if (db?.open())! {
             // 数据库开启成功
-            createTable()
+            _ = createTable()
             return true
         } else {
             // 数据库开启失败
@@ -37,30 +37,34 @@ class SQLite: NSObject {
     }
     
     /// 创建表
-    func createTable() {
+    func createTable() -> Bool {
         let sql = "CREATE TABLE IF NOT EXISTS t_models (id INTEGER PRIMARY KEY AUTOINCREMENT,js BLOB);"
         
         if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
             printDBug("创建表成功")
+            return true
         } else {
             printDBug("创建表失败")
+            return false
         }
     }
     
     /// 插入
-    func insert(js: String) {
+    func insert(js: String) -> Bool {
         let sql = "INSERT INTO t_models (js) VALUES (?);"
         
         if (db?.executeUpdate(sql, withArgumentsIn: [js]))! {
             printDBug("插入数据成功")
+            return true
         } else {
             printDBug("插入数据失败")
+            return false
         }
     }
     
     /// 查询
     func query() -> [Any]? {
-        let sql = "SELECT * FROM t_models"
+        let sql = "SELECT * FROM t_models;"
         let resultsSet = db?.executeQuery(sql, withArgumentsIn: nil)
         
         guard resultsSet != nil else {
@@ -76,6 +80,33 @@ class SQLite: NSObject {
         }
         
         return arr
+    }
+    
+    /// 删除
+    func delete() -> Bool {
+        // 删除所有 或 where ..... 来进行判断筛选删除
+        let sql = "DELETE FROM t_models;"
+        
+        if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
+            printDBug("删除成功")
+            return true
+        } else {
+            printDBug("删除失败")
+            return false
+        }
+    }
+    
+    /// 修改
+    func alter(newValue: Any) -> Bool {
+        let sql = "UPDATE t_models set js = \(newValue);"
+        
+        if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
+            printDBug("修改成功")
+            return true
+        } else {
+            printDBug("修改失败")
+            return false
+        }
     }
     
 }
