@@ -82,14 +82,15 @@ class SQLManager: NSObject {
     func insert(results: [[String: Any]]) {
         let data = NSKeyedArchiver.archivedData(withRootObject: results)
         let array = data.withUnsafeBytes {
-            [UInt8] (UnsafeBufferPointer(start: $0, count: data.count))
+            [UInt16](UnsafeBufferPointer(start: $0, count: data.count))
         }
         
         // 插入 SQL
         let insertSQL = "INSERT INTO t_models (results) VALUES (?);"
-
+        let cSql = (insertSQL.cString(using: .utf8))!
+        
         var stmt: OpaquePointer?
-        if sqlite3_prepare_v2(db, insertSQL, -1, &stmt, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(db, cSql, -1, &stmt, nil) == SQLITE_OK {
             sqlite3_bind_blob(stmt, 1, array, Int32(data.count), nil)
             sqlite3_step(stmt)
             sqlite3_finalize(stmt)
@@ -116,8 +117,10 @@ class SQLManager: NSObject {
             
             for dict in temoDictArr {
                 let data = dict["results"] as! Data
-                let res = NSKeyedUnarchiver.unarchiveObject(with: data)
-                tempArr.append(res)
+                let result = NSKeyedUnarchiver.unarchiveObject(with: data)
+                if let result = result {
+                    tempArr.append(result)
+                }
             }
             return tempArr
         }

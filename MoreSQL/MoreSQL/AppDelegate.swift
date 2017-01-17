@@ -16,12 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if SQLManager.shared.openDB() {
-            print("创建成功")
-        } else {
-            print("创建失败")
-        }
+//        if SQLManager.shared.openDB() {
+//            print("创建成功")
+//        } else {
+//            print("创建失败")
+//        }
         
+        if SQLite.shared.beginSQL() {
+            print("YES")
+        } else {
+            print("NO")
+        }
+                        
         return true
     }
 

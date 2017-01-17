@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3866FB3F0C83D00E3ACC1FDB /* Pods_MoreSQLUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC06D7D963B55D8D99E71AC0 /* Pods_MoreSQLUITests.framework */; };
+		73641A3388E217AE6E0FCA43 /* Pods_MoreSQLTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0458528CAB97AB739FEC2171 /* Pods_MoreSQLTests.framework */; };
+		BE04036429F71707A07A881B /* Pods_MoreSQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC761CAA8C68ECA86DAAA8F7 /* Pods_MoreSQL.framework */; };
+		D931EAC91E2DF4BC00085F7C /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931EAC81E2DF4BC00085F7C /* SQLite.swift */; };
 		D96AF3641E24F45400AAA44C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96AF3631E24F45400AAA44C /* AppDelegate.swift */; };
 		D96AF3661E24F45400AAA44C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96AF3651E24F45400AAA44C /* ViewController.swift */; };
 		D96AF3691E24F45400AAA44C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96AF3671E24F45400AAA44C /* Main.storyboard */; };
@@ -36,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0458528CAB97AB739FEC2171 /* Pods_MoreSQLTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreSQLTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C97878122D26F76D203C690 /* Pods-MoreSQLUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreSQLUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoreSQLUITests/Pods-MoreSQLUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8D4665E1F8B312AB038ED51F /* Pods-MoreSQL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreSQL.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoreSQL/Pods-MoreSQL.release.xcconfig"; sourceTree = "<group>"; };
+		AC06D7D963B55D8D99E71AC0 /* Pods_MoreSQLUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreSQLUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B13D55660CE418ED82CD20AA /* Pods-MoreSQLUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreSQLUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoreSQLUITests/Pods-MoreSQLUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2EF694A09841477C2A48292 /* Pods-MoreSQL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreSQL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoreSQL/Pods-MoreSQL.debug.xcconfig"; sourceTree = "<group>"; };
+		CBA2770306096B348E12D8EF /* Pods-MoreSQLTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreSQLTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoreSQLTests/Pods-MoreSQLTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D931EAC81E2DF4BC00085F7C /* SQLite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
 		D96AF3601E24F45400AAA44C /* MoreSQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoreSQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96AF3631E24F45400AAA44C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D96AF3651E24F45400AAA44C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +64,8 @@
 		D96AF3981E24F49300AAA44C /* SQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLManager.swift; sourceTree = "<group>"; };
 		D96AF39C1E24F4C700AAA44C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D96AF39E1E24F4E500AAA44C /* SQL-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQL-Bridging.h"; sourceTree = "<group>"; };
+		F4EE6FD4B9E9FF5980798DE9 /* Pods-MoreSQLTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoreSQLTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoreSQLTests/Pods-MoreSQLTests.release.xcconfig"; sourceTree = "<group>"; };
+		FC761CAA8C68ECA86DAAA8F7 /* Pods_MoreSQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoreSQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D96AF39D1E24F4C700AAA44C /* libsqlite3.tbd in Frameworks */,
+				BE04036429F71707A07A881B /* Pods_MoreSQL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73641A3388E217AE6E0FCA43 /* Pods_MoreSQLTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +90,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3866FB3F0C83D00E3ACC1FDB /* Pods_MoreSQLUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25EA82BD0BA76B9EB62D4623 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2EF694A09841477C2A48292 /* Pods-MoreSQL.debug.xcconfig */,
+				8D4665E1F8B312AB038ED51F /* Pods-MoreSQL.release.xcconfig */,
+				CBA2770306096B348E12D8EF /* Pods-MoreSQLTests.debug.xcconfig */,
+				F4EE6FD4B9E9FF5980798DE9 /* Pods-MoreSQLTests.release.xcconfig */,
+				B13D55660CE418ED82CD20AA /* Pods-MoreSQLUITests.debug.xcconfig */,
+				5C97878122D26F76D203C690 /* Pods-MoreSQLUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D96AF3571E24F45400AAA44C = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +118,7 @@
 				D96AF3851E24F45500AAA44C /* MoreSQLUITests */,
 				D96AF3611E24F45400AAA44C /* Products */,
 				D96AF39B1E24F4C700AAA44C /* Frameworks */,
+				25EA82BD0BA76B9EB62D4623 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +139,7 @@
 				D96AF3651E24F45400AAA44C /* ViewController.swift */,
 				D96AF3671E24F45400AAA44C /* Main.storyboard */,
 				D96AF3981E24F49300AAA44C /* SQLManager.swift */,
+				D931EAC81E2DF4BC00085F7C /* SQLite.swift */,
 				D96AF36D1E24F45400AAA44C /* Assets.xcassets */,
 				D96AF36F1E24F45400AAA44C /* LaunchScreen.storyboard */,
 				D96AF39E1E24F4E500AAA44C /* SQL-Bridging.h */,
@@ -138,6 +170,9 @@
 			isa = PBXGroup;
 			children = (
 				D96AF39C1E24F4C700AAA44C /* libsqlite3.tbd */,
+				FC761CAA8C68ECA86DAAA8F7 /* Pods_MoreSQL.framework */,
+				0458528CAB97AB739FEC2171 /* Pods_MoreSQLTests.framework */,
+				AC06D7D963B55D8D99E71AC0 /* Pods_MoreSQLUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D96AF38B1E24F45500AAA44C /* Build configuration list for PBXNativeTarget "MoreSQL" */;
 			buildPhases = (
+				462E124F302B3E4D0B3F0053 /* [CP] Check Pods Manifest.lock */,
 				D96AF35C1E24F45400AAA44C /* Sources */,
 				D96AF35D1E24F45400AAA44C /* Frameworks */,
 				D96AF35E1E24F45400AAA44C /* Resources */,
+				81C6FB3A5F3D6CCF6321F139 /* [CP] Embed Pods Frameworks */,
+				6AA44A987812F493B548752F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D96AF38E1E24F45500AAA44C /* Build configuration list for PBXNativeTarget "MoreSQLTests" */;
 			buildPhases = (
+				DF182780ABF2FCA82792E9E1 /* [CP] Check Pods Manifest.lock */,
 				D96AF3731E24F45500AAA44C /* Sources */,
 				D96AF3741E24F45500AAA44C /* Frameworks */,
 				D96AF3751E24F45500AAA44C /* Resources */,
+				8D7C1A99990C3C37D39B927D /* [CP] Embed Pods Frameworks */,
+				9475FCCC2A84F4BF775C57A0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D96AF3911E24F45500AAA44C /* Build configuration list for PBXNativeTarget "MoreSQLUITests" */;
 			buildPhases = (
+				06FF1F827C7E3BA5B7EDDEBE /* [CP] Check Pods Manifest.lock */,
 				D96AF37E1E24F45500AAA44C /* Sources */,
 				D96AF37F1E24F45500AAA44C /* Frameworks */,
 				D96AF3801E24F45500AAA44C /* Resources */,
+				5238363A267B88AD2E498280 /* [CP] Embed Pods Frameworks */,
+				D212602C174C458C1F647AB6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -274,12 +318,151 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06FF1F827C7E3BA5B7EDDEBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		462E124F302B3E4D0B3F0053 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5238363A267B88AD2E498280 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoreSQLUITests/Pods-MoreSQLUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AA44A987812F493B548752F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoreSQL/Pods-MoreSQL-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81C6FB3A5F3D6CCF6321F139 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoreSQL/Pods-MoreSQL-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D7C1A99990C3C37D39B927D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoreSQLTests/Pods-MoreSQLTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9475FCCC2A84F4BF775C57A0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoreSQLTests/Pods-MoreSQLTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D212602C174C458C1F647AB6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoreSQLUITests/Pods-MoreSQLUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF182780ABF2FCA82792E9E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D96AF35C1E24F45400AAA44C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D96AF3661E24F45400AAA44C /* ViewController.swift in Sources */,
+				D931EAC91E2DF4BC00085F7C /* SQLite.swift in Sources */,
 				D96AF3641E24F45400AAA44C /* AppDelegate.swift in Sources */,
 				D96AF3991E24F49300AAA44C /* SQLManager.swift in Sources */,
 			);
@@ -429,6 +612,7 @@
 		};
 		D96AF38C1E24F45500AAA44C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2EF694A09841477C2A48292 /* Pods-MoreSQL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4UH48N8U4B;
@@ -443,6 +627,7 @@
 		};
 		D96AF38D1E24F45500AAA44C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D4665E1F8B312AB038ED51F /* Pods-MoreSQL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4UH48N8U4B;
@@ -457,6 +642,7 @@
 		};
 		D96AF38F1E24F45500AAA44C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBA2770306096B348E12D8EF /* Pods-MoreSQLTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -472,6 +658,7 @@
 		};
 		D96AF3901E24F45500AAA44C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4EE6FD4B9E9FF5980798DE9 /* Pods-MoreSQLTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +674,7 @@
 		};
 		D96AF3921E24F45500AAA44C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B13D55660CE418ED82CD20AA /* Pods-MoreSQLUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4UH48N8U4B;
@@ -501,6 +689,7 @@
 		};
 		D96AF3931E24F45500AAA44C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C97878122D26F76D203C690 /* Pods-MoreSQLUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4UH48N8U4B;
