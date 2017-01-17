@@ -2,10 +2,11 @@
 存取字典或数组类型数据 Demo
 
 **SQLite** 工具类提供将**"不包含自定义类型"的数组或字典JSON化**, 便于存取. 
+
 (需要依赖于 **FMDB** 框架. Github: https://github.com/ccgus/fmdb)
 
 > 属性
-``swift
+```swift
 shared: 单例
 isPrint :是否打印调试信息
 ```
