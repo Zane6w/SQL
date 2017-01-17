@@ -21,7 +21,7 @@ class SQLManager: NSObject {
         let cFilePath = (filePath?.cString(using: .utf8))!
         
         if sqlite3_open(cFilePath, &db) != SQLITE_OK {
-            print("数据库开启失败")
+            printDBug("数据库开启失败")
             return false
         }
         
@@ -50,7 +50,7 @@ class SQLManager: NSObject {
         
         // 查询准备工作
         if sqlite3_prepare_v2(db, cQuery, -1, &stmt, nil) != SQLITE_OK {
-            print("没有准备好")
+            printDBug("没有准备好")
             return nil
         }
         

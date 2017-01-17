@@ -41,9 +41,9 @@ class SQLite: NSObject {
         let sql = "CREATE TABLE IF NOT EXISTS t_models (id INTEGER PRIMARY KEY AUTOINCREMENT,js BLOB);"
         
         if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
-            print("创建表成功")
+            printDBug("创建表成功")
         } else {
-            print("创建表失败")
+            printDBug("创建表失败")
         }
     }
     
@@ -52,9 +52,9 @@ class SQLite: NSObject {
         let sql = "INSERT INTO t_models (js) VALUES (?);"
         
         if (db?.executeUpdate(sql, withArgumentsIn: [js]))! {
-            print("插入数据成功")
+            printDBug("插入数据成功")
         } else {
-            print("插入数据失败")
+            printDBug("插入数据失败")
         }
     }
     
@@ -107,4 +107,13 @@ extension SQLite {
         }
     }
 
+}
+
+// MARK:- 自定义 print 打印 (公共方法)
+/// 高级打印方法
+func printDBug<T>(_ info: T, fileName: String = #file, methodName: String = #function, lineNumber: Int = #line) {
+    let file = (fileName as NSString).pathComponents.last!
+    #if DEBUG
+        print("\(file) -> \(methodName) [line \(lineNumber)]: \(info)")
+    #endif
 }
