@@ -1,6 +1,8 @@
 # SQL
 存取字典或数组类型数据 Demo
 
+e.g.: 从微博请求的数据是以 [[String: Any]] 字典数组类型存储, 就可以以此来讲数据 **JSON化** 后存在本地.
+
 **SQLite** 工具类提供将**"不包含自定义类型"的数组或字典JSON化**, 便于存取. 
 
 (需要依赖于 **FMDB** 框架. Github: https://github.com/ccgus/fmdb)
