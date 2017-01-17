@@ -12,6 +12,7 @@ isPrint :是否打印调试信息
 ```
 
 > 有 Bool 返回值可以判断是否成功
+
 > 打开数据库并创建表（传入存储路径和表名）
 ```swift
 func openDB(pathName: String? = nil, tableName: String) -> Bool
