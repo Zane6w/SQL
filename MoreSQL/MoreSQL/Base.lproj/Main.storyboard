@@ -35,13 +35,33 @@
                                     <action selector="readData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z5R-JE-Lau"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZg-94-1bj">
+                                <rect key="frame" x="156" y="259" width="62" height="30"/>
+                                <state key="normal" title="修改数据"/>
+                                <connections>
+                                    <action selector="updateData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DaS-RQ-C4Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6B-KN-Emf">
+                                <rect key="frame" x="157" y="439" width="62" height="30"/>
+                                <state key="normal" title="删除数据">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="imW-gY-AXd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="D6B-KN-Emf" firstAttribute="top" secondItem="UcR-Pe-qbE" secondAttribute="bottom" constant="30" id="1ha-84-4tD"/>
                             <constraint firstItem="UcR-Pe-qbE" firstAttribute="top" secondItem="Ulo-de-Btt" secondAttribute="bottom" constant="30" id="8XJ-Z5-LWr"/>
                             <constraint firstItem="UcR-Pe-qbE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HRu-cX-QkK"/>
+                            <constraint firstItem="D6B-KN-Emf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NGb-Ot-qgR"/>
                             <constraint firstItem="Ulo-de-Btt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nl0-Ng-efs"/>
                             <constraint firstItem="Ulo-de-Btt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O0f-UF-7SR"/>
+                            <constraint firstItem="Ulo-de-Btt" firstAttribute="top" secondItem="UZg-94-1bj" secondAttribute="bottom" constant="30" id="VKp-Yx-hw1"/>
+                            <constraint firstItem="UZg-94-1bj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qfI-mR-jIC"/>
                         </constraints>
                     </view>
                 </viewController>

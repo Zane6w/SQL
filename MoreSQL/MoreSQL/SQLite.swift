@@ -97,8 +97,8 @@ class SQLite: NSObject {
     }
     
     /// 修改
-    func alter(newValue: Any) -> Bool {
-        let sql = "UPDATE t_models set js = \(newValue);"
+    func update(newValue: Any) -> Bool {
+        let sql = "UPDATE t_models SET js = '\(newValue)';"
         
         if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
             printDBug("修改成功")

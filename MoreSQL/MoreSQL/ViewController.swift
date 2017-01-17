@@ -9,14 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    // MARK:- 属性
     var results = [[String: Any]]()
     var dict = [String: Any]()
-        
+    
+    // MARK:- 函数方法
     override func viewDidLoad() {
         super.viewDidLoad()
         dict["name"] = "姓名"
-        dict["age"] = 23
+        dict["age"] = 24
         
         results.append(dict)
     }
@@ -24,17 +25,21 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
     
+}
+
+// MARK:- 数据操作
+extension ViewController {
+    // 插入数据
     @IBAction func insertData(_ sender: UIButton) {
         let js = convertToJson(objc: results)
         
         if let js = js {
-            SQLite.shared.insert(js: js)
+            _ = SQLite.shared.insert(js: js)
         }
-        
     }
     
+    // 读取数据
     @IBAction func readData(_ sender: UIButton) {
         let array = SQLite.shared.query()
         
@@ -42,14 +47,25 @@ class ViewController: UIViewController {
             for js in array {
                 let json = js as! String
                 let objc = jsonConvertToAny(json: json)
-                print(objc)
+                print(objc as Any)
             }
         }
-        
+    }
+    
+    // 更新数据
+    @IBAction func updateData(_ sender: UIButton) {
+        let js = convertToJson(objc: results)
+        _ = SQLite.shared.update(newValue: js!)
+    }
+    
+    // 删除数据 (删除全部)
+    @IBAction func deleteData(_ sender: UIButton) {
+        _ = SQLite.shared.delete()
     }
     
 }
 
+// MARK:- 数据转换
 extension ViewController {
     /// 转换为 JSON
     func convertToJson(objc: Any) -> String? {
