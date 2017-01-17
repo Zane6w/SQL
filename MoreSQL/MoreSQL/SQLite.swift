@@ -24,14 +24,14 @@ class SQLite: NSObject {
     
     // MARK:- 方法
     /// 开启数据库
-    func beginSQL() -> Bool {
+    func openDB() -> Bool {
         db = FMDatabase(path: dbPath!)
         if (db?.open())! {
-            print("数据库开启成功")
+            // 数据库开启成功
             createTable()
             return true
         } else {
-            print("数据库开启失败")
+            // 数据库开启失败
             return false
         }
     }
@@ -78,4 +78,33 @@ class SQLite: NSObject {
         return arr
     }
     
+}
+
+// MARK:- JSON、ANY 转换
+extension SQLite {
+    /// "Any"转换为"JSON"类型
+    func convertToJson(objc: Any) -> String? {
+        let data = try? JSONSerialization.data(withJSONObject: objc, options: .prettyPrinted)
+        if let data = data {
+            return String(data: data, encoding: .utf8)
+        } else {
+            return nil
+        }
+    }
+    
+    /// "JSON"转换为"Any"类型
+    func jsonConvertToAny(json: String) -> Any? {
+        let data = json.data(using: .utf8)
+        if let data = data {
+            let anyObjc = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            if let anyObjc = anyObjc {
+                return anyObjc
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }
+
 }
