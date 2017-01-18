@@ -77,8 +77,15 @@ class SQLite: NSObject {
     // MARK: >>> 插入数据
     /// 插入数据
     /// - parameter objc: 传入非自定义类型
-    func insert(objc: Any) -> Bool {
-        let sql = "INSERT INTO \(tableName!) (js) VALUES (?);"
+    /// - parameter inTable: 需要操作的表名
+    func insert(objc: Any, inTable: String? = nil) -> Bool {
+        var sql: String?
+        if inTable == nil {
+            sql = "INSERT INTO \(tableName!) (js) VALUES (?);"
+        } else {
+            sql = "INSERT INTO \(inTable!) (js) VALUES (?);"
+        }
+        
         let js = toJson(objc: objc)
         
         if (db?.executeUpdate(sql, withArgumentsIn: [js!]))! {
@@ -92,8 +99,15 @@ class SQLite: NSObject {
     
     // MARK: >>> 查询数据
     /// 查询数据
-    func query() -> [Any]? {
-        let sql = "SELECT * FROM \(tableName!);"
+    /// - parameter inTable: 需要操作的表名
+    func query(inTable: String? = nil) -> [Any]? {
+        var sql: String?
+        if inTable == nil {
+            sql = "SELECT * FROM \(tableName!);"
+        } else {
+            sql = "SELECT * FROM \(inTable!);"
+        }
+        
         let set = db?.executeQuery(sql, withArgumentsIn: nil)
         
         guard set != nil else {
@@ -116,9 +130,15 @@ class SQLite: NSObject {
     
     // MARK: >>> 删除数据 (全部)
     /// 删除 (全部) 数据
-    func delete() -> Bool {
+    /// - parameter inTable: 需要操作的表名
+    func delete(inTable: String? = nil) -> Bool {
         // 删除所有 或 where ..... 来进行判断筛选删除
-        let sql = "DELETE FROM \(tableName!);"
+        var sql: String?
+        if inTable == nil {
+            sql = "DELETE FROM \(tableName!);"
+        } else {
+            sql = "DELETE FROM \(inTable!);"
+        }
         
         if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
             remind("删除成功")
@@ -132,10 +152,16 @@ class SQLite: NSObject {
     // MARK: >>> 更新数据
     /// 更新数据
     /// - parameter newValue: 传入非自定义类型
-    func update(newValue: Any) -> Bool {
+    /// - parameter inTable: 需要操作的表名
+    func update(newValue: Any, inTable: String? = nil) -> Bool {
         let js = toJson(objc: newValue)
         
-        let sql = "UPDATE \(tableName!) SET js = '\(js!)';"
+        var sql: String?
+        if inTable == nil {
+            sql = "UPDATE \(tableName!) SET js = '\(js!)';"
+        } else {
+            sql = "UPDATE \(inTable!) SET js = '\(js!)';"
+        }
         
         if (db?.executeUpdate(sql, withArgumentsIn: nil))! {
             remind("修改成功")
